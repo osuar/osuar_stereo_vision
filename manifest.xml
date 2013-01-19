@@ -1,0 +1,14 @@
+<package>
+  <description brief="osuar_stereo_vision">
+
+     osuar_stereo_vision
+
+  </description>
+  <author>yoos</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/osuar_stereo_vision</url>
+
+</package>
+
+
