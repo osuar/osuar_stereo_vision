@@ -1,0 +1,16 @@
+<launch>
+  <include file="$(find osuar_stereo_vision)/launch/stereo_node.launch" />
+
+  <env name="ROS_NAMESPACE" value="osuar_stereo" />
+  <node pkg  = "camera_calibration"
+        type = "cameracalibrator.py"
+        name = "cameracalibrator"
+        args = "--size=8x6
+                --square=0.02551
+                right:=/$(env ROS_NAMESPACE)/right/image_raw
+                left:=/$(env ROS_NAMESPACE)/left/image_raw
+                right_camera:=/$(env ROS_NAMESPACE)/right
+                left_camera:=/$(env ROS_NAMESPACE)/left"
+                />
+</launch>
+
