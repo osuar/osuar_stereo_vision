@@ -7,6 +7,11 @@
   <!--arg if="$(arg debug)" name="launch_prefix" value="/usr/bin/valgrind -DELETEME-leak-check=full "/-->
   <arg unless="$(arg debug)" name="launch_prefix" value=""/>
 
+  <!--By default, camera_calibration's calibratecamera.py saves configurations
+      to ~/.ros/camera_info, but we've moved it here for easy access-->
+  <arg name="rgb_camera_info_url"   default="$(find osuar_stereo_vision)/camera_info/rgb_B00364705850043B.yaml"   />
+  <arg name="depth_camera_info_url" default="$(find osuar_stereo_vision)/camera_info/depth_B00364705850043B.yaml" />
+
   <node pkg="rgbdslam" type="rgbdslam" name="rgbdslam" cwd="node" required="true" output="screen"  launch-prefix="$(arg launch_prefix)"> 
     <!-- see rgbslam_sample_config.launch for all available parameters and their default values -->
     <param name="config/topic_image_mono"              value="/camera/rgb/image_color"/> <!--could also be color -->
