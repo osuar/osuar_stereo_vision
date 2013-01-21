@@ -14,6 +14,7 @@
 
   <node pkg="rgbdslam" type="rgbdslam" name="rgbdslam" cwd="node" required="true" output="screen"  launch-prefix="$(arg launch_prefix)"> 
     <!-- see rgbslam_sample_config.launch for all available parameters and their default values -->
+    <param name="config/use_gui" value="true"/>
     <param name="config/topic_image_mono"              value="/camera/rgb/image_color"/> <!--could also be color -->
   	<param name="config/topic_image_depth"             value="/camera/depth/image"/>
     <param name="config/feature_detector_type"         value="SIFTGPU"/><!-- If SIFTGPU is enabled in CMakeLists.txt, use SURF here -->
